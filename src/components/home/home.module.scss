@@ -1,0 +1,10 @@
+@use 'src/components/design-system';
+
+.header {
+  color: design-system.$gray700-dark;
+  @extend .h-1;
+}
+
+.darkContainer {
+  background: design-system.$bg-dark;
+}
