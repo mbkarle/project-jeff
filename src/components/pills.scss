@@ -1,0 +1,35 @@
+@use 'src/components/design-system';
+
+.button {
+  @extend .p-3;
+  border-radius: 100px;
+  background: design-system.$gray50;
+  color: design-system.$gray500;
+  padding: 8px 16px;
+  box-sizing: border-box;
+
+  &:hover {
+    background: design-system.$gray75;
+  }
+
+  &.active {
+    color: design-system.$gray0;
+    background: design-system.$gray600;
+  }
+}
+
+.tag {
+  font-size: 11px;
+  line-height: 15px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  border: 1px solid design-system.$gray75;
+  background: design-system.$gray50;
+  color: design-system.$gray500;
+
+  &.dark {
+    background: design-system.$gray75;
+    border-color: design-system.$gray100;
+  }
+}
