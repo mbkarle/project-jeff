@@ -2,7 +2,7 @@ import * as styles from "./button.module.scss";
 
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import mergeDefaults from "../../../utils/merge-defaults";
+import mergeDefaults from "utils/merge-defaults";
 import ButtonHoverContent from "./button-hover-content";
 
 const useAfterClick = (delay) => {
