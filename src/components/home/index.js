@@ -1,12 +1,11 @@
-import * as styles from "./home.module.scss";
-
 import React from "react";
+import Hero, { HERO_DATA } from "components/home/hero";
 
 const Home = () => {
   return (
-    <div className={styles.darkContainer}>
-      <h1 className={styles.header}>Hello world</h1>
-    </div>
+    <>
+      <Hero {...HERO_DATA} />
+    </>
   );
 };
 

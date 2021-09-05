@@ -1,0 +1,17 @@
+@use 'src/css/pills';
+
+.tab {
+  @extend .button;
+
+  &.tab-active {
+    @extend .active;
+  }
+}
+
+.view-active {
+  display: flex;
+}
+
+.view-inactive {
+  display: none;
+}

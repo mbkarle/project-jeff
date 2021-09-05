@@ -1,0 +1,77 @@
+@use 'src/css/design-system';
+
+.hero {
+  display: flex;
+  align-items: flex-start;
+  padding: 160px var(--page-margin) 108px;
+
+  .hero-summaries {
+    margin-left: 72px;
+  }
+
+  @include design-system.on-tablet {
+    flex-direction: column;
+    align-items: stretch;
+
+    .hero-summaries {
+      margin-left: 0px;
+      margin-top: 40px;
+    }
+
+    .hero-header-content {
+      max-width: 572px;
+      min-width: unset;
+      text-align: center;
+      align-items: center;
+      align-self: center;
+    }
+  }
+}
+
+.hero-header-content {
+  min-width: 400px;
+  display: flex;
+  flex-direction: column;
+
+  .hero-header {
+    margin-bottom: 16px;
+  }
+}
+
+.hero-header {
+  @extend .h-1;
+  color: design-system.$gray800;
+}
+
+.hero-sub-header {
+  @extend .h-2;
+  color: design-system.$gray500;
+}
+
+.hero-summaries {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  background: design-system.$gray0;
+  border: 1px solid design-system.$gray75;
+  border-radius: 12px;
+  box-sizing: border-box;
+
+  .tab-container {
+    margin-bottom: 28px;
+  }
+}
+
+.tab-container {
+  display: flex;
+  align-items: center;
+
+  .tab:not(:first-child) {
+    margin-left: 24px;
+  }
+}
+
+.summary-text {
+  @extend .p-1;
+  color: design-system.$gray600;
+}
