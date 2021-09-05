@@ -1,15 +1,9 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
+import * as styles from "./layout.module.scss";
 
 import * as React from "react";
 import PropTypes from "prop-types";
 
-import Header from "./header";
-import * as styles from "./layout.module.scss";
+import Header from "components/header";
 
 const NAV_DATA = [
   {

@@ -4,7 +4,7 @@ import * as React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { useLocation } from "@reach/router";
-import Button from "./basics/button";
+import Button from "components/basics/button";
 import mergeDefaults from "utils/merge-defaults";
 import AvailableIcon from "svg/available-icon";
 import CopyIcon from "svg/copy-icon";
