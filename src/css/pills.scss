@@ -1,7 +1,10 @@
-@use 'src/components/design-system';
+@use 'src/css/design-system';
 
 .button {
   @extend .p-3;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
   border-radius: 100px;
   background: design-system.$gray50;
   color: design-system.$gray500;
@@ -15,6 +18,7 @@
   &.active {
     color: design-system.$gray0;
     background: design-system.$gray600;
+    cursor: default;
   }
 }
 

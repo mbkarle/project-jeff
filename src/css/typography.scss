@@ -1,0 +1,45 @@
+// BIOTIF 
+@font-face {
+  font-family: "Biotif";
+  src: url("../fonts/biotif/biotif-regular.woff2") format("woff2"), url("../fonts/biotif/biotif-regular.woff") format("woff");
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Biotif";
+  src: url("../fonts/biotif/biotif-bold.woff2") format("woff2"), url("../fonts/biotif/biotif-bold.woff") format("woff");
+  font-weight: bold;
+  font-display: swap;
+}
+
+// PEACHI
+@font-face {
+  font-family: "Peachi";
+  src: url("../fonts/peachi/peachi-bold.woff2") format("woff2"), url("../fonts/peachi/peachi-bold.woff") format("woff");
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Peachi";
+  src: url("../fonts/peachi/peachi-regular.woff2") format("woff2"), url("../fonts/peachi/peachi-regular.woff") format("woff");
+  font-weight: normal;
+  font-display: swap;
+}
+
+@mixin biotif-font {
+  font-family: "Biotif", Helvetica, sans-serif;
+}
+
+@mixin peachi-font {
+  font-family: "Peachi", Helvetica, sans-serif;
+}
+
+body {
+  @include biotif-font;
+}
+
+button {
+  font-family: inherit;
+}

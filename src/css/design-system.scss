@@ -36,7 +36,15 @@ $gray900-dark: #fafafb;
 $gray1000-dark: #fff;
 
 // breakpoints
-$mobile-break: 800px;
+$mobile-break: 600px;
+$tablet-break: 1024px;
+@mixin on-tablet {
+  & {
+    @media (max-width: $tablet-break) {
+      @content;
+    }
+  }
+}
 @mixin on-mobile {
   & {
     @media (max-width: $mobile-break) {
