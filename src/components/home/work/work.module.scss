@@ -1,0 +1,77 @@
+@use 'src/css/design-system';
+@use 'src/css/pills';
+
+.example-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 196px;
+
+  &.left {
+    flex-direction: row-reverse;
+  }
+}
+
+.example-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  $image-margin: 128px;
+  padding-left: var(--page-margin);
+  padding-right: $image-margin;
+
+  .example-title {
+    margin: 32px 0 16px;
+  }
+
+  .tags-container .work-tag:not(:first-child) {
+    margin-left: 16px;
+  }
+}
+
+.tags-container {
+  display: flex;
+  align-items: center;
+}
+
+.example-title {
+  color: design-system.$gray600;
+  @extend .h-3;
+}
+
+.example-description {
+  color: design-system.$gray600;
+  @extend .p-2;
+}
+
+.separator-container {
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  
+  .separator {
+    flex: 1;
+    margin-left: 24px;
+  }
+
+  div {
+    font-size: 14px;
+    line-height: 22px;
+    color: design-system.$gray400;
+  }
+
+  margin: 0 var(--page-margin) 140px;
+}
+
+.separator {
+  border-bottom: 1px solid design-system.$gray150;
+}
+
+.work-tag {
+  @extend .tag;
+}
+
+.image-container {
+  flex-shrink: 0;
+  width: 56vw;
+  max-width: 824px;
+}

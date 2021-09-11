@@ -4,6 +4,7 @@
   display: flex;
   align-items: flex-start;
   padding: 160px var(--page-margin) 108px;
+  box-sizing: border-box;
 
   .hero-summaries {
     margin-left: 72px;
@@ -56,6 +57,7 @@
   border: 1px solid design-system.$gray75;
   border-radius: 12px;
   box-sizing: border-box;
+  transition: all 0.2s;
 
   .tab-container {
     margin-bottom: 28px;
