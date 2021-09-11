@@ -7,6 +7,8 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-netlify-identity-widget`,
+    `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-root-import`,
