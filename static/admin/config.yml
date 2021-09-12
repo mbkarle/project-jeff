@@ -21,7 +21,37 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
           - {label: "Path", name: "path", widgeth: "hidden", default: "/"}
-          - {label: "Hero Text", name: "heroText", widget: "object", fields: [{label: "Title", name: "title", widget: "string"}, {label: "Subtitle", name: "subtitle", widget: "string"}] }
+          - label: "Hero Content"
+            name: "heroContent"
+            widget: "object"
+            collapsed: true
+            fields: 
+              - {label: "Header", name: "header", widget: "string"}
+              - {label: "Subheader", name: "subheader", widget: "string"}
+              - label: "Summaries"
+                name: "summaries"
+                allow_add: true
+                field:
+                  label: "Summary"
+                  name: "summary"
+                  widget: "object"
+                  fields:
+                    - { label: "Label", name: "label", widget: "string" }
+                    - { label: "Text", name: "text", widget: "string" }
+          - label: "Work Examples"
+            name: "workExamples"
+            widget: "list"
+            collapsed: true
+            field:
+              label: "Example"
+              name: "example"
+              widget: "object"
+              fields:
+                - { label: "Tags", name: "tag", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
+                - { label: "Title", name: "title", widget: "string" }
+                - { label: "Description", name: "description", widget: "string" }
+                - { label: "Image", name: "img", widget: "image" }
+
       - file: "src/pages/about/index.md"
         label: "About"
         name: "about"

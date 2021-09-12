@@ -1,12 +1,12 @@
 import React from "react";
-import Hero, { HERO_DATA } from "components/home/hero";
-import Work, { WORK_DATA } from "components/home/work";
+import Hero from "components/home/hero";
+import Work from "components/home/work";
 
-const Home = () => {
+const Home = ({ data }) => {
   return (
     <>
-      <Hero {...HERO_DATA} />
-      <Work {...WORK_DATA} />
+      <Hero {...data.heroContent} />
+      <Work examples={data.workExamples} />
     </>
   );
 };

@@ -55,6 +55,10 @@ const Work = ({ examples }) => {
   );
 };
 
+Work.defaultProps = {
+  examples: [],
+};
+
 Work.propTypes = {
   examples: PropTypes.arrayOf(EXAMPLE_TYPE),
 };

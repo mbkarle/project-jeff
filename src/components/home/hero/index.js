@@ -49,7 +49,7 @@ Hero.propTypes = {
 
 const HeroSummaries = ({ summaries, ...otherProps }) => (
   <div {...mergeDefaults({ className: styles.heroSummaries }, otherProps)}>
-    <Tabbable initialValue={summaries[0].label}>
+    <Tabbable initialValue={summaries?.[0]?.label}>
       <div className={styles.tabContainer}>
         {summaries.map(({ label }) => (
           <Tabbable.Tab key={`tab-${label}`} eventKey={label} className={styles.tab}>
@@ -66,8 +66,11 @@ const HeroSummaries = ({ summaries, ...otherProps }) => (
   </div>
 );
 
+HeroSummaries.defaultProps = {
+  summaries: [],
+};
 HeroSummaries.propTypes = {
-  summaries: HERO_TYPES.summaries.isRequired,
+  summaries: HERO_TYPES.summaries,
 };
 
 export default Hero;
