@@ -5,8 +5,8 @@ import Work from "components/home/work";
 const Home = ({ data }) => {
   return (
     <>
-      <Hero {...data.heroContent} />
-      <Work examples={data.workExamples} />
+      <Hero {...(data?.heroContent || {})} />
+      <Work examples={data?.workExamples} />
     </>
   );
 };

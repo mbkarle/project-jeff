@@ -1,1 +1,2 @@
-export const getFrontmatter = (graphqlData) => graphqlData?.markdownRemark?.frontmatter;
+export const getFrontmatter = (graphqlData) =>
+  graphqlData?.markdownRemark?.frontmatter || graphqlData;
