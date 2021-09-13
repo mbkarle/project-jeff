@@ -17,7 +17,11 @@ const Work = ({ examples }) => {
   return (
     <>
       <Separator />
-      {examples.map(({ tags, title, description, img }, idx) => {
+      {examples?.map((example, idx) => {
+        if (!example) {
+          return null;
+        }
+        const { tags, title, description, img } = example;
         const image = getImage(img);
         return (
           <div
@@ -26,9 +30,7 @@ const Work = ({ examples }) => {
           >
             <div className={styles.exampleContent}>
               <div className={styles.tagsContainer}>
-                {tags.map((tag) => (
-                  <Tag tag={tag} key={`tag-${tag}`} />
-                ))}
+                {tags && tags.map((tag) => <Tag tag={tag} key={`tag-${tag}`} />)}
               </div>
               <MD className={styles.exampleTitle}>{title}</MD>
               <MD className={styles.exampleDescription}>{description}</MD>
