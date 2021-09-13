@@ -21,11 +21,10 @@ workExamples:
   - tags:
       - UX/UI Design
       - Responsive Web
-      - Design Stuff
     title: Nudging students to give better feedback
     description: I redesigned our feedback mechanics by providing students with
       better guidance and structure for how to give feedback, increasing the
       average length of feedback by **56%** and feedback comment submission by
       **88%**.
-    img: ../../../images/work/nudge.png
+    img: /img/nudge.png
 ---
