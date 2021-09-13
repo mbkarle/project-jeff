@@ -32,26 +32,18 @@ collections:
                 name: "summaries"
                 widget: "list"
                 allow_add: true
-                field:
-                  label: "Summary"
-                  name: "summary"
-                  widget: "object"
-                  fields:
-                    - { label: "Label", name: "label", widget: "string" }
-                    - { label: "Text", name: "text", widget: "string" }
+                fields:
+                  - { label: "Label", name: "label", widget: "string" }
+                  - { label: "Text", name: "text", widget: "string" }
           - label: "Work Examples"
             name: "workExamples"
             widget: "list"
             collapsed: true
-            field:
-              label: "Example"
-              name: "example"
-              widget: "object"
-              fields:
-                - { label: "Tags", name: "tag", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
-                - { label: "Title", name: "title", widget: "string" }
-                - { label: "Description", name: "description", widget: "string" }
-                - { label: "Image", name: "img", widget: "image" }
+            fields:
+              - { label: "Tags", name: "tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+              - { label: "Image", name: "img", widget: "image" }
 
       - file: "src/pages/about.md"
         label: "About"
