@@ -21,6 +21,7 @@ workExamples:
   - tags:
       - UX/UI Design
       - Responsive Web
+      - Design Stuff
     title: Nudging students to give better feedback
     description: I redesigned our feedback mechanics by providing students with
       better guidance and structure for how to give feedback, increasing the
