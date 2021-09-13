@@ -27,4 +27,11 @@ workExamples:
       average length of feedback by **56%** and feedback comment submission by
       **88%**.
     img: /img/nudge.png
+  - title: Creating an immersive project view
+    description: I introduced expanded feed cards in an effort to create a more
+      immersive project view, leading to higher engagement rates across all
+      student projects and updates.
+    tags:
+      - UX/UI Design
+    img: /img/immersive_experience.png
 ---
