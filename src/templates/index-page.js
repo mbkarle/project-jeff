@@ -32,7 +32,11 @@ export const query = graphql`
         }
         workExamples {
           description
-          img
+          img {
+            childrenImageSharp {
+              gatsbyImageData
+            }
+          }
           tags
           title
         }
