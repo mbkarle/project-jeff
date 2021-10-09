@@ -1,7 +1,9 @@
 @use 'src/css/design-system';
 
 .button {
+  cursor: pointer;
   overflow: hidden;
+  position: relative;
   &:hover {
     .hover-content:not(:empty) {
       display: flex;
@@ -17,4 +19,9 @@
   inset: 0;
   align-items: center;
   justify-content: center;
+}
+
+.main-content {
+  z-index: design-system.$z-bg;
+  background: inherit;
 }

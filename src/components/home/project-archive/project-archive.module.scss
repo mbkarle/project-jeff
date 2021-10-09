@@ -1,0 +1,46 @@
+@use 'src/css/design-system';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px var(--page-margin);
+  background: design-system.$gray800;
+
+  .date-description {
+    margin-bottom: 24px;
+  }
+
+  .header {
+    margin-bottom: 8px;
+  }
+
+  .project-container {
+    margin-top: 88px;
+  }
+}
+
+.date-description {
+  color: design-system.$gray400-dark;
+  @extend .gen-header;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.header {
+  @extend .gen-header;
+  color: design-system.$gray800-dark;
+  font-size: 32px;
+  line-height: 36px;
+}
+
+.subheader {
+  color: design-system.$gray600-dark;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.project {
+  margin-bottom: 120px;
+}

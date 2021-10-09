@@ -34,4 +34,18 @@ workExamples:
     tags:
       - UX/UI Design
     img: /img/immersive_experience.png
+projectArchive:
+  header: Project Archive
+  dateDescription: "Circa 2018 - Present"
+  subheader: These are older projects, contract gigs, etc. that I’ve also had my hands on.
+  projects:
+    - tags:
+      - UX/UI Design
+      title: Hashflow
+      description: Hashflow is the most powerful DeFi trading experience, featuring tight spreads, zero slippage and more. I had the opportunity to work with the founder to redesign their trading terminal.
+      image: /img/hashflow.png
+contact:
+  cta: "Have an idea for the next biggest ______?"
+  description: "I love startups. I’m always looking for a way to scratch the itch for moving quickly and helping shape big ideas. I can do it all—need a pitch deck for a fundraise? Looking to clean up your landing page? Need an MVP but don’t know where to start? Looking to iterate on your product? Not a problem.\n\nI’m particularly passionate about crypto, impact/mission driven companies, and products focused on building communities."
+  copyEmailText: Let’s jam. wjeff415@gmail.com
 ---

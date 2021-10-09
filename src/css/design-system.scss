@@ -32,6 +32,7 @@ $gray400-dark: #96a2b4;
 $gray500-dark: #b3bdcc;
 $gray600-dark: #cdd4de;
 $gray700-dark: #e1e5eb;
+$gray800-dark: #f0f2f5;
 $gray900-dark: #fafafb;
 $gray1000-dark: #fff;
 
@@ -56,7 +57,8 @@ $tablet-break: 1024px;
 // header styles
 .h-1,
 .h-2,
-.h-3 {
+.h-3,
+.gen-header {
   font-family: "Peachi", Helvetica;
   letter-spacing: 0.2px;
 }

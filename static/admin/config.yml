@@ -85,11 +85,12 @@ collections:
   - label: "Components"
     name: "components"
     files:
-      - file: "src/components/footer/footer.md"
+      - file: "src/info/footer.md"
         label: "Footer"
         name: "footer"
         fields:
           - {label: "Title", name: "title", widget: "string"}
+          - {label: "Data Key", name: "dataKey", widget: "hidden", default: "footer"}
           - {label: "Subtitle", name: "subtitle", widget: "string"}
           - label: "Link Groups"
             name: "linkGroups"
@@ -102,3 +103,24 @@ collections:
                 fields:
                   - {label: "Label", name: "label", widget: "string"}
                   - {label: "URL", name: "url", widget: "string"}
+      - file: "src/info/header.md"
+        label: "Header"
+        name: "header"
+        fields:
+          - {label: "Data Key", name: "dataKey", widget: "hidden", default: "header"}
+          - {label: "Site Title", name: "siteTitle", widget: "string", default: "Jeff Wang"}
+          - label: "Navigation Links"
+            name: "navigation"
+            widget: "list"
+            fields:
+              - {label: "Label", name: "label", widget: "string"}
+              - {label: "Pathname", name: "pathname", widget: "string"}
+  - label: "Other Information"
+    name: "info"
+    files:
+      - file: "src/info/general-info.md"
+        label: "General Information"
+        name: "general"
+        fields:
+          - {label: "Data Key", name: "dataKey", widget: "hidden", default: "general-info"}
+          - {label: "Email", name: "email", widget: "string"}

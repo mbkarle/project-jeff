@@ -2,13 +2,31 @@ import * as styles from "./header.module.scss";
 
 import * as React from "react";
 import PropTypes from "prop-types";
-import { Link } from "gatsby";
+import { Link, useStaticQuery, graphql } from "gatsby";
 import { useLocation } from "@reach/router";
-import Button from "components/basics/button";
 import mergeDefaults from "utils/merge-defaults";
-import AvailableIcon from "svg/available-icon";
-import CopyIcon from "svg/copy-icon";
-import copyToClipboard from "utils/copy-to-clipboard";
+import AvailableButton from "components/basics/available-button";
+import { getFrontmatter } from "utils/data";
+
+const HeaderWithData = (props) => {
+  const data = useStaticQuery(graphql`
+    {
+      markdownRemark(frontmatter: { dataKey: { eq: "header" } }) {
+        frontmatter {
+          siteTitle
+          navigation {
+            label
+            pathname
+          }
+        }
+      }
+    }
+  `);
+
+  const { navigation, siteTitle } = getFrontmatter(data) || {};
+
+  return <Header navData={navigation} siteTitle={siteTitle} {...props} />;
+};
 
 const Header = ({ navData, siteTitle }) => (
   <div className={styles.header}>
@@ -18,7 +36,7 @@ const Header = ({ navData, siteTitle }) => (
         <AutoActiveNavItem {...item} key={`header-nav-${item.pathname}`} />
       ))}
     </div>
-    <AvailableCTA />
+    <AvailableButton />
   </div>
 );
 
@@ -31,32 +49,6 @@ Header.propTypes = {
   ),
   siteTitle: PropTypes.string,
 };
-
-const CopiedText = (props) => (
-  <div {...mergeDefaults({ className: styles.copied }, props)}>
-    <CopyIcon />
-    <div>Email Copied!</div>
-  </div>
-);
-
-const EMAIL = "jeff@monthly.com";
-
-const AvailableCTA = (props) => (
-  <Button
-    {...mergeDefaults({ className: styles.availableCtaButton }, props)}
-    clickContent={<CopiedText />}
-    onClick={() => copyToClipboard(EMAIL)}
-  >
-    <div className={styles.availableCta}>
-      <AvailableIcon />
-      <div className={styles.availableCtaText}>Available for select projects</div>
-    </div>
-    <Button.HoverContent className={styles.availableHover}>
-      <CopyIcon />
-      <div>Copy Email Address</div>
-    </Button.HoverContent>
-  </Button>
-);
 
 const AutoActiveNavItem = (props) => {
   const { pathname } = useLocation();
@@ -85,4 +77,4 @@ AutoActiveNavItem.propTypes = {
   ...HeaderNavItem.propTypes,
 };
 
-export default Header;
+export default HeaderWithData;

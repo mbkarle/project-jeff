@@ -32,13 +32,33 @@ export const query = graphql`
         }
         workExamples {
           description
+          tags
+          title
           img {
             childrenImageSharp {
               gatsbyImageData
             }
           }
-          tags
-          title
+        }
+        projectArchive {
+          dateDescription
+          header
+          projects {
+            description
+            tags
+            title
+            image {
+              childrenImageSharp {
+                gatsbyImageData
+              }
+            }
+          }
+          subheader
+        }
+        contact {
+          copyEmailText
+          cta
+          description
         }
       }
     }

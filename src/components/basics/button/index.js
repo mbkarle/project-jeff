@@ -31,7 +31,7 @@ const Button = ({ children, clickContent, onClick, ...otherProps }) => {
         onClick && onClick();
       }}
     >
-      {children}
+      <div className={styles.mainContent}>{children}</div>
       <div className={styles.clickContent} style={{ display: isClicked ? "flex" : "none" }}>
         {clickContent}
       </div>

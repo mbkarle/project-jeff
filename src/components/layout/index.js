@@ -3,8 +3,12 @@ import "css/typography.scss";
 
 import * as React from "react";
 import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
 
 import Header from "components/header";
+import Footer from "components/footer";
+import { InfoProvider } from "hooks/info";
+import { getFrontmatter } from "utils/data";
 
 const NAV_DATA = [
   {
@@ -20,8 +24,11 @@ const NAV_DATA = [
 const Layout = ({ children }) => {
   return (
     <div className={styles.layout}>
-      <Header navData={NAV_DATA} siteTitle="Jeff Wang" />
-      {children}
+      <InfoProvider>
+        <Header />
+        {children}
+        <Footer />
+      </InfoProvider>
     </div>
   );
 };

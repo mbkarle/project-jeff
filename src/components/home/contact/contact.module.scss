@@ -1,0 +1,77 @@
+@use 'src/css/design-system';
+
+.container {
+  background: design-system.$gray25;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 128px #{"min(264px, 18vw)"} 136px;
+}
+
+.cta-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .available-button {
+    margin-bottom: 32px;
+    margin-right: 0;
+  }
+
+  min-width: 360px;
+  margin-right: 108px;
+}
+
+.cta {
+  color: design-system.$gray600;
+  @extend .gen-header;
+  font-size: 32px;
+  line-height: 48px;
+}
+
+.description-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 450px;
+
+  .description {
+    margin-bottom: 32px;
+  }
+}
+
+.description, .copyEmailText {
+  @extend .p-1;
+  color: design-system.$gray800;
+}
+
+.description {
+  white-space: pre-wrap;
+}
+
+.copyEmailContainer {
+  display: flex;
+  align-items: center;
+
+  .copy-email-button {
+    margin-left: 24px;
+  }
+}
+
+.copy-email-button {
+  transition: all 0.2s;
+  padding: 5px 8px 3px;
+  background: design-system.$gray75-dark;
+  border-radius: 4px;
+  box-shadow: inset 0px 1px 2px rgba(255, 255, 255, 0.25);
+
+  font-size: 11px;
+  line-height: 15px;
+  font-weight: 600;
+  color: design-system.$gray1000-dark;
+  border: none;
+
+  &:hover {
+    background: design-system.$gray200-dark;
+  }
+}

@@ -33,7 +33,8 @@
   color: design-system.$gray500;
 
   &.dark {
-    background: design-system.$gray75;
-    border-color: design-system.$gray100;
+    background: design-system.$gray75-dark;
+    border-color: design-system.$gray100-dark;
+    color: design-system.$gray500-dark;
   }
 }
