@@ -5,15 +5,21 @@ import { getFrontmatter } from "utils/data";
 const InfoContext = createContext({});
 
 export const InfoProvider = (props) => {
-  const data = useStaticQuery(graphql`
-    {
-      markdownRemark(frontmatter: { dataKey: { eq: "general-info" } }) {
-        frontmatter {
-          email
+  let data;
+  try {
+    data = useStaticQuery(graphql`
+      {
+        markdownRemark(frontmatter: { dataKey: { eq: "general-info" } }) {
+          frontmatter {
+            email
+          }
         }
       }
-    }
-  `);
+    `);
+  } catch (e) {
+    console.log(e);
+    console.log("Static query failed - you may be in preview mode");
+  }
 
   return <InfoContext.Provider value={getFrontmatter(data) ?? {}} {...props} />;
 };
