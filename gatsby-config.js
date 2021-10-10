@@ -8,6 +8,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-image`,
     {
       resolve: "gatsby-transformer-remark",
       options: {
@@ -39,8 +40,6 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-netlify-identity-widget`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-image`,
-    `gatsby-plugin-image`,
     `gatsby-plugin-root-import`,
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support

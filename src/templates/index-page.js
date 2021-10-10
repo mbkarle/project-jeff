@@ -35,7 +35,7 @@ export const query = graphql`
           tags
           title
           img {
-            childrenImageSharp {
+            childImageSharp {
               gatsbyImageData
             }
           }
@@ -48,7 +48,7 @@ export const query = graphql`
             tags
             title
             image {
-              childrenImageSharp {
+              childImageSharp {
                 gatsbyImageData
               }
             }

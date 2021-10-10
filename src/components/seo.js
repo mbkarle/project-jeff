@@ -5,14 +5,14 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React, { useContext } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
-import { PreviewContext } from "components/preview";
+import { useIsPreview } from "hooks/preview";
 
 const Seo = (props) => {
-  const { isPreview } = useContext(PreviewContext);
+  const isPreview = useIsPreview();
 
   return !isPreview ? <SeoContent {...props} /> : null;
 };

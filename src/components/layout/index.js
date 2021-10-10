@@ -7,14 +7,16 @@ import PropTypes from "prop-types";
 import Header from "components/header";
 import Footer from "components/footer";
 import { InfoProvider } from "hooks/info";
+import { useIsPreview } from "hooks/preview";
 
 const Layout = ({ children }) => {
+  const isPreview = useIsPreview();
   return (
     <div className={styles.layout}>
       <InfoProvider>
-        <Header />
+        {!isPreview && <Header />}
         {children}
-        <Footer />
+        {!isPreview && <Footer />}
       </InfoProvider>
     </div>
   );

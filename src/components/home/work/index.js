@@ -2,9 +2,8 @@ import * as styles from "./work.module.scss";
 
 import React from "react";
 import PropTypes from "prop-types";
-import { GatsbyImage } from "gatsby-plugin-image";
+import Image from "components/basics/image";
 import MD from "components/basics/md";
-import { getImage } from "utils/data";
 
 const EXAMPLE_TYPE = PropTypes.shape({
   tags: PropTypes.arrayOf(PropTypes.string),
@@ -22,7 +21,6 @@ const Work = ({ examples }) => {
           return null;
         }
         const { tags, title, description, img } = example;
-        const image = getImage(img);
         return (
           <div
             key={`example-${title}`}
@@ -36,7 +34,7 @@ const Work = ({ examples }) => {
               <MD className={styles.exampleDescription}>{description}</MD>
             </div>
             <div className={styles.imageContainer}>
-              <GatsbyImage image={image} alt={`Picture of: ${title}`} />
+              <Image image={img} alt={`Picture of: ${title}`} />
             </div>
           </div>
         );
