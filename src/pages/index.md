@@ -34,18 +34,46 @@ workExamples:
     tags:
       - UX/UI Design
     img: /img/immersive_experience.png
+  - tags:
+      - UX/UI Design
+      - Responsive Web
+    title: Driving retention through membership
+    description: I led design on Monthly Plus—a membership initiative that allows
+      students, particularly the high intent learners, to continue their
+      creative journeys with Monthly classes at half off. In the first 3 months
+      of launch, over 2500 students became Plus members. Some classes had
+      **conversion rates as high as 24%**.
+    img: /img/mplus.png
+  - tags:
+      - Visual design
+      - Motion design
+    title: Designing Monthly’s front door
+    description: I designed our home, about and career pages, which see hundreds of
+      thousands of views from unique visitors each month. Key metrics aside
+      though...who doesn’t love a nicely designed homepage?
+    img: /img/mfrontdoor.png
 projectArchive:
   header: Project Archive
-  dateDescription: "Circa 2018 - Present"
+  dateDescription: Circa 2018 - Present
   subheader: These are older projects, contract gigs, etc. that I’ve also had my hands on.
   projects:
     - tags:
-      - UX/UI Design
+        - UX/UI Design
       title: Hashflow
-      description: Hashflow is the most powerful DeFi trading experience, featuring tight spreads, zero slippage and more. I had the opportunity to work with the founder to redesign their trading terminal.
+      description: Hashflow is the most powerful DeFi trading experience, featuring
+        tight spreads, zero slippage and more. I had the opportunity to work
+        with the founder to redesign their trading terminal.
       image: /img/hashflow.png
+      img: /img/hashflow.png
 contact:
-  cta: "Have an idea for the next biggest ______?"
-  description: "I love startups. I’m always looking for a way to scratch the itch for moving quickly and helping shape big ideas. I can do it all—need a pitch deck for a fundraise? Looking to clean up your landing page? Need an MVP but don’t know where to start? Looking to iterate on your product? Not a problem.\n\nI’m particularly passionate about crypto, impact/mission driven companies, and products focused on building communities."
+  cta: Have an idea for the next biggest ______?
+  description: >-
+    I love startups. I’m always looking for a way to scratch the itch for moving
+    quickly and helping shape big ideas. I can do it all—need a pitch deck for a
+    fundraise? Looking to clean up your landing page? Need an MVP but don’t know
+    where to start? Looking to iterate on your product? Not a problem.
+
+
+    I’m particularly passionate about crypto, impact/mission driven companies, and products focused on building communities.
   copyEmailText: Let’s jam. wjeff415@gmail.com
 ---
