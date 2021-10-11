@@ -12,7 +12,20 @@
   align-items: center;
 
   .image {
-    margin-right: 142px;
+    margin-right: #{"min(142px, 12vw)"};
+  }
+
+  @include design-system.on-tablet {
+    flex-direction: column;
+
+    .image {
+      margin-right: 0;
+      margin-bottom: 32px;
+    }
+
+    .image, .description-container {
+      width: 100%;
+    }
   }
 }
 

@@ -62,7 +62,7 @@ collections:
                   - { label: "Tags", name: "tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
                   - { label: "Title", name: "title", widget: "string" }
                   - { label: "Description", name: "description", widget: "string" }
-                  - { label: "Image", name: "img", widget: "image" }
+                  - { label: "Image", name: "image", widget: "image" }
 
           - label: "Contact Section"
             name: "contact"
@@ -79,8 +79,56 @@ collections:
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about-page"}
           - {label: "Path", name: "path", widget: "hidden", default: "/about/"}
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - label: "Intro Section"
+            name: "intro"
+            widget: "object"
+            fields:
+              - { label: "Header", name: "header", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Image alt text", name: "alt", widget: "string" }
+          - label: "Moments of Work"
+            name: "work"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", default: "Moments of Work" }
+              - { label: "Description", name: "description", widget: "string" }
+              - label: "Recognition Section"
+                name: "recognition"
+                widget: "object"
+                fields:
+                  - { label: "Title", name: "title", widget: "string" }
+                  - label: "Recognitions"
+                    name: "recognitions"
+                    widget: "list"
+                    fields:
+                      - { label: "Award Name/Description", name: "award", widget: "string" }
+              - label: "Timeline"
+                name: "timeline"
+                widget: "list"
+                fields:
+                  - { label: "Company", name: "company", widget: "string" }
+                  - { label: "Role", name: "role", widget: "string" }
+                  - { label: "Dates Involved", name: "dates", widget: "string" }
+          - label: "Moments of Play"
+            name: "play"
+            widget: "object"
+            fields:
+              - { label: "Title", name: "title", widget: "string", default: "Moments of Play" }
+              - label: "Categories of Play"
+                name: "categories"
+                widget: "list"
+                fields:
+                  - { label: "Category", name: "category", widget: "string" }
+                  - { label: "Description", name: "description", widget: "string" }
+                  - label: "Activities"
+                    name: "activities"
+                    widget: "list"
+                    field:
+                      { label: "Activity", name: "activity", widget: "string" }
+                  - label: "Collage"
+                    name: "image"
+                    widget: "image"
 
   - label: "Components"
     name: "components"

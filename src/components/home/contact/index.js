@@ -13,21 +13,23 @@ const Contact = ({ cta, description, copyEmailText, ...otherProps }) => {
   const email = useEmail();
   return (
     <div {...mergeDefaults({ className: styles.container }, otherProps)}>
-      <div className={styles.ctaSection}>
-        <AvailableButton className={styles.availableButton} />
-        <div className={styles.cta}>{cta}</div>
-      </div>
-      <div className={styles.descriptionContainer}>
-        <MD className={styles.description}>{description}</MD>
-        <div className={styles.copyEmailContainer}>
-          <div className={styles.copyEmailText}>{copyEmailText}</div>
-          <Button
-            className={styles.copyEmailButton}
-            onClick={() => copyToClipboard(email)}
-            clickContent="Email Copied!"
-          >
-            <div>Copy Email Address</div>
-          </Button>
+      <div className={styles.content}>
+        <div className={styles.ctaSection}>
+          <AvailableButton className={styles.availableButton} />
+          <div className={styles.cta}>{cta}</div>
+        </div>
+        <div className={styles.descriptionContainer}>
+          <MD className={styles.description}>{description}</MD>
+          <div className={styles.copyEmailContainer}>
+            <div className={styles.copyEmailText}>{copyEmailText}</div>
+            <Button
+              className={styles.copyEmailButton}
+              onClick={() => copyToClipboard(email)}
+              clickContent="Email Copied!"
+            >
+              <div>Copy Email Address</div>
+            </Button>
+          </div>
         </div>
       </div>
     </div>

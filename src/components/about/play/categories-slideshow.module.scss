@@ -1,0 +1,80 @@
+@use 'src/css/design-system';
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  box-sizing: border-box;
+
+  .tabs-container {
+    margin-right: #{"min(64px, 5vw)"};
+  }
+}
+
+.tabs-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-container {
+  max-width: 50%;
+  flex-shrink: 0;
+}
+
+.tab-button {
+  border: 1px solid design-system.$gray600;
+  background: design-system.$gray50-dark;
+  border-radius: 8px;
+  padding: 18px 32px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  &.active {
+    cursor: auto;
+    .tab {
+      padding-left: 24px;
+      border-left: 2px solid design-system.$blue600;
+    }
+
+    .description {
+      max-height: 500px;
+      transition-duration: 1s;
+    }
+  }
+
+  &.active,
+  &:hover {
+    background: design-system.$gray75-dark;
+  }
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  transition: 0.2s padding-left;
+
+  .activities {
+    margin-bottom: 8px;
+  }
+}
+
+.category {
+  @extend .p-1;
+  color: design-system.$gray0;
+}
+
+.activities {
+  @extend .p-3;
+  color: design-system.$gray200;
+}
+
+.description {
+  @extend .p-1;
+  color: design-system.$gray50;
+  text-align: left;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+  overflow: hidden;
+}

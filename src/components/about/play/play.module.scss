@@ -1,0 +1,23 @@
+@use 'src/css/design-system';
+
+.container {
+  width: 100%;
+  background: design-system.$gray25-dark;
+  display: flex;
+  flex-direction: column;
+  
+  padding: 80px var(--page-margin) 112px;
+  box-sizing: border-box;
+
+  .title {
+    margin-bottom: 80px;
+  }
+}
+
+.title {
+  @extend .gen-header;
+  text-align: center;
+  color: design-system.$gray800-dark;
+  font-size: 32px;
+  line-height: 36px;
+}

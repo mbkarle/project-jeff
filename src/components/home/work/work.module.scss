@@ -6,8 +6,30 @@
   align-items: center;
   margin-bottom: 196px;
 
+  $image-margin: #{"min(128px, 9vw)"};
+
+  .example-content {
+    padding-left: var(--page-margin);
+    padding-right: $image-margin;
+  }
+
   &.left {
     flex-direction: row-reverse;
+    .example-content {
+      padding-left: $image-margin;
+      padding-right: var(--page-margin);
+    }
+  }
+
+  @include design-system.on-tablet {
+    &, &.left {
+      flex-direction: column-reverse;
+      margin-bottom: 120px;
+
+      .example-content {
+        padding: 56px 132px 0;
+      }
+    }
   }
 }
 
@@ -15,9 +37,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  $image-margin: 128px;
-  padding-left: var(--page-margin);
-  padding-right: $image-margin;
 
   .example-title {
     margin: 32px 0 16px;
@@ -60,6 +79,10 @@
   }
 
   margin: 0 var(--page-margin) 140px;
+
+  @include design-system.on-tablet {
+    margin-bottom: 82px;
+  }
 }
 
 .separator {
@@ -74,4 +97,9 @@
   flex-shrink: 0;
   width: 56vw;
   max-width: 824px;
+
+  @include design-system.on-tablet {
+    width: 100vw;
+    max-width: 100vw;
+  }
 }

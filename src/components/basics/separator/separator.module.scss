@@ -1,0 +1,8 @@
+@use 'src/css/design-system';
+
+.separator {
+  box-sizing: border-box;
+  align-self: stretch;
+  margin: 0 var(--page-margin);
+  border-bottom: 1px solid design-system.$gray150;
+}

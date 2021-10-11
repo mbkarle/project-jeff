@@ -64,7 +64,6 @@ projectArchive:
         tight spreads, zero slippage and more. I had the opportunity to work
         with the founder to redesign their trading terminal.
       image: /img/hashflow.png
-      img: /img/hashflow.png
 contact:
   cta: Have an idea for the next biggest ______?
   description: >-

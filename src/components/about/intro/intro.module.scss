@@ -1,0 +1,41 @@
+@use 'src/css/design-system';
+
+.container {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  align-items: flex-end;
+  $padding-top: 84px;
+  padding: $padding-top var(--page-margin);
+  width: 100%;
+  box-sizing: border-box;
+
+  .description {
+    margin-right: 40px;
+  }
+
+  .header {
+    top: $padding-top;
+    left: var(--page-margin);
+  }
+}
+
+.description {
+  flex: 1;
+  color: design-system.$gray600;
+  margin-top: 96px;
+  @extend .p-1;
+}
+
+.image-container {
+  z-index: design-system.$z-bg;
+  max-width: 50%;
+}
+
+.header {
+  color: design-system.$gray800;
+  @extend .h-1;
+  position: absolute;
+  max-width: 100%;
+  z-index: design-system.$z-mg;
+}

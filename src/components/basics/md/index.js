@@ -1,5 +1,8 @@
+import * as styles from "./md.module.scss";
+
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import mergeDefaults from "utils/merge-defaults";
 
 const MD = (props) => (
   <ReactMarkdown
@@ -9,7 +12,7 @@ const MD = (props) => (
         return <div {...props} />;
       },
     }}
-    {...props}
+    {...mergeDefaults({ className: styles.md }, props)}
   />
 );
 

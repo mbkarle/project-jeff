@@ -4,8 +4,30 @@
   background: design-system.$gray25;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 128px #{"min(264px, 18vw)"} 136px;
+  justify-content: center;
+  width: 100vw;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  padding: 128px 0 136px;
+
+  @include design-system.on-tablet {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 84px 0;
+
+    .cta-section {
+      margin-right: 0;
+      margin-bottom: 32px;
+    }
+
+    .description-container {
+      max-width: 600px;
+    }
+  }
 }
 
 .cta-section {
@@ -18,7 +40,7 @@
     margin-right: 0;
   }
 
-  min-width: 360px;
+  max-width: 360px;
   margin-right: 108px;
 }
 

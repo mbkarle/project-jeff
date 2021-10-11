@@ -1,4 +1,4 @@
-const mergeClassName = (defaultClassName, propsClassName) =>
+export const mergeClassName = (defaultClassName, propsClassName) =>
   `${defaultClassName || ""} ${propsClassName || ""}`;
 
 const mergeStyle = (defaultStyle, propsStyle) => {

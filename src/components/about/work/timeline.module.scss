@@ -1,0 +1,54 @@
+@use 'src/css/design-system';
+
+.container {
+  padding: 84px #{"min(84px, 7vw)"} 0;
+  display: flex;
+  align-items: flex-start;
+
+  > .event:not(:last-child) {
+    margin-right: 16px;
+  }
+}
+
+.event {
+  min-height: 80px;
+  padding: 16px 18px 12px 22px;
+  background: design-system.$gray0;
+  box-shadow: 0px 3.5px 20px rgba(1, 1, 3, 0.05);
+  border: 1px solid design-system.$gray50;
+  box-sizing: border-box;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .role-info {
+    margin-right: 8px;
+  }
+}
+
+.role-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.company {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+  color: design-system.$gray800;
+}
+
+.role {
+  font-size: 13px;
+  line-height: 26px;
+  color: design-system.$gray600;
+}
+
+.dates {
+  font-family: "Peachi";
+  font-size: 20px;
+  line-height: 26px;
+  color: design-system.$gray600;
+}

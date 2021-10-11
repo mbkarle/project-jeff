@@ -1,0 +1,59 @@
+@use 'src/css/design-system';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 0 96px;
+
+  .title {
+    margin-bottom: 8px;
+  }
+}
+
+.title {
+  @extend .gen-header;
+  color: design-system.$gray300;
+  font-size: 24px;
+  line-height: 45px;
+  padding: 0 var(--page-margin);
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 var(--page-margin);
+
+  .description {
+    margin-right: #{"min(163px, 12vw)"};
+  }
+}
+
+.description, .recognition-title {
+  @extend .p-1;
+  color: design-system.$gray600;
+}
+
+.description {
+  max-width: 50%;
+}
+
+.recognition-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .recognition-title, .award:not(:last-child) {
+    margin-bottom: 8px;
+  }
+}
+
+.recognition-title {
+  font-weight: 600;
+}
+
+.award {
+  font-size: 15px;
+  line-height: 22px;
+  color: design-system.$gray600;
+}

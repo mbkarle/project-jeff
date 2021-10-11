@@ -6,6 +6,8 @@
   align-items: center;
   padding: 48px var(--page-margin);
   background: design-system.$gray800;
+  width: 100vw;
+  box-sizing: border-box;
 
   .date-description {
     margin-bottom: 24px;
@@ -17,6 +19,11 @@
 
   .project-container {
     margin-top: 88px;
+  }
+
+  @include design-system.on-tablet {
+    padding-left: 130px;
+    padding-right: 130px;
   }
 }
 
@@ -43,4 +50,8 @@
 
 .project {
   margin-bottom: 120px;
+
+  @include design-system.on-tablet {
+    margin-bottom: 84px;
+  }
 }
