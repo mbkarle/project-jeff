@@ -64,6 +64,34 @@ projectArchive:
         tight spreads, zero slippage and more. I had the opportunity to work
         with the founder to redesign their trading terminal.
       image: /img/hashflow.png
+    - tags:
+        - Visual design
+        - UX/UI Design
+      title: Stream
+      description: Stream provides feed and chat APIs that powers a web and mobile
+        applications used by over a billion end users. My short stint there was
+        focused primarily on designing their SDK page, as well as additional
+        marketing collateral.
+      image: /img/stream_project.png
+    - tags:
+        - Native Mobile
+        - UX/UI Design
+      title: Alliant Credit Union
+      description: Alliant Credit Union is a Chicago based credit union with a wide
+        range of services, low fees, and competitive interest rates. I single
+        handedly redesigned their native mobile platform, which resulted in an
+        increase to 4.7 stars over 5000+ reviews in both the App Store and
+        Google Play Store.
+      image: /img/alliant_project.png
+    - tags:
+        - Native Mobile
+        - UX/UI Design
+      title: Regal Cinemas
+      description: Regal operates the second-largest theater circuit in the United
+        States, with over 7,200 screens in 549 theaters. I led the redesign of
+        their loyalty program, which resulted in an increase to 4.7 stars over
+        40,000 reviews across both the App Store and Google Play Store.
+      image: /img/regal_project.png
 contact:
   cta: Have an idea for the next biggest ______?
   description: >-
