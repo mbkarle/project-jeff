@@ -63,7 +63,7 @@ projectArchive:
       description: Hashflow is the most powerful DeFi trading experience, featuring
         tight spreads, zero slippage and more. I had the opportunity to work
         with the founder to redesign their trading terminal.
-      image: /img/hashflow.png
+      image: /img/hashflow_project.png
     - tags:
         - Visual design
         - UX/UI Design
