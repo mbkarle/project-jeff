@@ -14,6 +14,10 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+
+  .tab-button:not(:last-child) {
+    margin-bottom: 24px;
+  }
 }
 
 .image-container {

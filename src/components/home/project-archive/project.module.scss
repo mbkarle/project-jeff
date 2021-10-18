@@ -37,6 +37,12 @@
   .title {
     margin: 32px 0 16px;
   }
+
+  @include design-system.on-mobile {
+    .title {
+      margin-top: 24px;
+    }
+  }
 }
 
 .tags-container {

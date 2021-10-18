@@ -22,12 +22,27 @@
   }
 
   @include design-system.on-tablet {
-    &, &.left {
+    &,
+    &.left {
       flex-direction: column-reverse;
       margin-bottom: 120px;
 
       .example-content {
         padding: 56px 132px 0;
+      }
+    }
+  }
+
+  @include design-system.on-mobile {
+    &,
+    &.left {
+      margin-bottom: 80px;
+      .example-content {
+        padding: 32px var(--page-margin) 0;
+
+        .example-title {
+          margin-top: 24px;
+        }
       }
     }
   }
@@ -66,7 +81,7 @@
   display: flex;
   align-items: center;
   align-self: stretch;
-  
+
   .separator {
     flex: 1;
     margin-left: 24px;
@@ -82,6 +97,10 @@
 
   @include design-system.on-tablet {
     margin-bottom: 82px;
+  }
+
+  @include design-system.on-mobile {
+    margin-bottom: 56px;
   }
 }
 

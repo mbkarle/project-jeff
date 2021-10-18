@@ -25,6 +25,18 @@
     padding-left: 130px;
     padding-right: 130px;
   }
+
+  @include design-system.on-mobile {
+    padding: 48px var(--page-margin) 0;
+
+    .subheader {
+      padding: 0 8px;
+    }
+
+    .project-container {
+      margin-top: 64px;
+    }
+  }
 }
 
 .date-description {

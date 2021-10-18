@@ -28,6 +28,15 @@
       align-self: center;
     }
   }
+
+  @include design-system.on-mobile {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    .hero-summaries {
+      padding: 24px;
+    }
+  }
 }
 
 .hero-header-content {
@@ -71,6 +80,10 @@
 
   .tab:not(:first-child) {
     margin-left: 24px;
+  }
+
+  @include design-system.on-mobile {
+    justify-content: center;
   }
 }
 

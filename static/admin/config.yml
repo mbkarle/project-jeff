@@ -43,7 +43,7 @@ collections:
             fields:
               - { label: "Tags", name: "tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
               - { label: "Title", name: "title", widget: "string" }
-              - { label: "Description", name: "description", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
               - { label: "Image", name: "img", widget: "image" }
 
           - label: "Project Archive"
@@ -61,7 +61,7 @@ collections:
                 fields:
                   - { label: "Tags", name: "tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
                   - { label: "Title", name: "title", widget: "string" }
-                  - { label: "Description", name: "description", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
                   - { label: "Image", name: "image", widget: "image" }
 
           - label: "Contact Section"
@@ -69,8 +69,8 @@ collections:
             widget: "object"
             collapsed: true
             fields:
-              - { label: "Call to Action", name: "cta", widget: "string" }
-              - { label: "Description", name: "description", widget: "string" }
+              - { label: "Call to Action", name: "cta", widget: "text" }
+              - { label: "Description", name: "description", widget: "text" }
               - { label: "Copy Email Text", name: "copyEmailText", widget: "string" }
 
       - file: "src/pages/about.md"
@@ -84,7 +84,7 @@ collections:
             widget: "object"
             fields:
               - { label: "Header", name: "header", widget: "string" }
-              - { label: "Description", name: "description", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
               - { label: "Image", name: "image", widget: "image" }
               - { label: "Image alt text", name: "alt", widget: "string" }
           - label: "Moments of Work"
@@ -92,7 +92,7 @@ collections:
             widget: "object"
             fields:
               - { label: "Title", name: "title", widget: "string", default: "Moments of Work" }
-              - { label: "Description", name: "description", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
               - label: "Recognition Section"
                 name: "recognition"
                 widget: "object"
@@ -120,7 +120,7 @@ collections:
                 widget: "list"
                 fields:
                   - { label: "Category", name: "category", widget: "string" }
-                  - { label: "Description", name: "description", widget: "string" }
+                  - { label: "Description", name: "description", widget: "text" }
                   - label: "Activities"
                     name: "activities"
                     widget: "list"

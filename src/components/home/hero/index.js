@@ -4,6 +4,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import mergeDefaults from "utils/merge-defaults";
 import Tabbable from "components/basics/tabbable";
+import { useIsMobileSize } from "hooks/window-size";
 
 const HERO_TYPES = {
   header: PropTypes.string,
@@ -32,24 +33,27 @@ Hero.propTypes = {
   summaries: HERO_TYPES.summaries.isRequired,
 };
 
-const HeroSummaries = ({ summaries, ...otherProps }) => (
-  <div {...mergeDefaults({ className: styles.heroSummaries }, otherProps)}>
-    <Tabbable initialValue={summaries?.[0]?.label}>
-      <div className={styles.tabContainer}>
-        {summaries?.map(({ label }) => (
-          <Tabbable.Tab key={`tab-${label}`} eventKey={label} className={styles.tab}>
-            {label}
-          </Tabbable.Tab>
+const HeroSummaries = ({ summaries, ...otherProps }) => {
+  const isMobile = useIsMobileSize();
+  return (
+    <div {...mergeDefaults({ className: styles.heroSummaries }, otherProps)}>
+      <Tabbable initialValue={summaries?.[0]?.label}>
+        <div className={styles.tabContainer}>
+          {summaries?.map(({ label }) => (
+            <Tabbable.Tab key={`tab-${label}`} eventKey={label} className={styles.tab}>
+              {!isMobile ? label : label?.split(" ")[0]}
+            </Tabbable.Tab>
+          ))}
+        </div>
+        {summaries?.map(({ label, text }) => (
+          <Tabbable.View key={`view-${label}`} eventKey={label} className={styles.summaryText}>
+            {text}
+          </Tabbable.View>
         ))}
-      </div>
-      {summaries?.map(({ label, text }) => (
-        <Tabbable.View key={`view-${label}`} eventKey={label} className={styles.summaryText}>
-          {text}
-        </Tabbable.View>
-      ))}
-    </Tabbable>
-  </div>
-);
+      </Tabbable>
+    </div>
+  );
+};
 
 HeroSummaries.defaultProps = {
   summaries: [],

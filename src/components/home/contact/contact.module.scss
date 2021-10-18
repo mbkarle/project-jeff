@@ -12,6 +12,7 @@
   display: flex;
   align-items: center;
   padding: 128px 0 136px;
+  position: relative;
 
   @include design-system.on-tablet {
     flex-direction: column;
@@ -26,6 +27,29 @@
 
     .description-container {
       max-width: 600px;
+    }
+  }
+
+  @include design-system.on-mobile {
+    padding: 80px var(--page-margin) 72px;
+    .available-button {
+      position: absolute;
+      top: 0;
+      transform: translateY(-50%);
+      align-self: center;
+      z-index: design-system.$z-fg;
+    }
+    .cta-section {
+      margin-bottom: 22px;
+    }
+  }
+
+  .copy-email-container {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .copy-email-button {
+      margin: 24px 0 0;
     }
   }
 }
@@ -62,7 +86,8 @@
   }
 }
 
-.description, .copyEmailText {
+.description,
+.copy-email-text {
   @extend .p-1;
   color: design-system.$gray800;
 }
@@ -71,7 +96,7 @@
   white-space: pre-wrap;
 }
 
-.copyEmailContainer {
+.copy-email-container {
   display: flex;
   align-items: center;
 

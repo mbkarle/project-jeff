@@ -19,10 +19,10 @@ const Timeline = ({ timeline, ...otherProps }) => {
   );
 };
 
-const maxLen = (str1, str2) => (str1.length > str2.length ? str1.length : str2.length);
+const maxLen = (str1, str2) => (str1?.length > str2?.length ? str1?.length : str2?.length) || 0;
 
 const Event = ({ company, role, dates, ...otherProps }) => {
-  const contentLen = maxLen(company, role) + dates.length;
+  const contentLen = maxLen(company, role) + (dates?.length || 0);
   const flex = contentLen + Math.log2(contentLen + 2);
   return (
     <div {...mergeDefaults({ className: styles.event, style: { flex } }, otherProps)}>
