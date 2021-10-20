@@ -8,6 +8,22 @@
   > .event:not(:last-child) {
     margin-right: 16px;
   }
+
+  @include design-system.on-tablet {
+    flex-direction: column-reverse;
+    align-items: stretch;
+
+    padding: 56px var(--page-margin) 0;
+
+    > .event:not(:first-child) {
+      margin-right: 0;
+      margin-bottom: 8px;
+    }
+  }
+
+  @include design-system.on-mobile {
+    padding-top: 32px;
+  }
 }
 
 .event {

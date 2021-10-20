@@ -18,6 +18,29 @@
     top: $padding-top;
     left: var(--page-margin);
   }
+
+  @include design-system.on-tablet {
+    flex-direction: column-reverse;
+    align-items: center;
+    $padding-top: 96px;
+    padding: $padding-top 0 32px;
+
+    .header {
+      text-align: center;
+      left: unset;
+      top: $padding-top;
+      transform: translateY(-50%);
+    }
+
+    .image-container {
+      max-width: 100%;
+    }
+
+    .description {
+      padding: 40px var(--page-margin) 0;
+      margin: 0;
+    }
+  }
 }
 
 .description {

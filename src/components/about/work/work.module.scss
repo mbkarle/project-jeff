@@ -8,6 +8,33 @@
   .title {
     margin-bottom: 8px;
   }
+
+  @include design-system.on-tablet {
+    padding: 32px 0;
+    .details {
+      box-sizing: border-box;
+      max-width: 100%;
+
+      .description {
+        margin-right: #{"min(84px, 12vw)"};
+      }
+    }
+  }
+
+  @include design-system.on-mobile {
+    padding: 24px 0;
+
+    .details {
+      flex-direction: column;
+      justify-content: flex-start;
+
+      .description {
+        margin-right: 0;
+        margin-bottom: 32px;
+        max-width: 100%;
+      }
+    }
+  }
 }
 
 .title {

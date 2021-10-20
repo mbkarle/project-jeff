@@ -1,13 +1,20 @@
 import { useEffect, useState } from "react";
+import * as variables from "css/_export.module.scss";
+
+const getWindowSize = () => {
+  return {
+    width: window.visualViewport?.width || window.innerWidth,
+    height: window.visualViewport?.height || window.innerHeight,
+  };
+};
 
 export const useWindowSize = () => {
-  const [width, setWidth] = useState(0);
-  const [height, setHeight] = useState(0);
+  const [width, setWidth] = useState(() => getWindowSize().width);
+  const [height, setHeight] = useState(() => getWindowSize().height);
 
   useEffect(() => {
     const handleResize = () => {
-      const w = window.visualViewport?.width || window.innerWidth;
-      const h = window.visualViewport?.height || window.innerHeight;
+      const { width: w, height: h } = getWindowSize();
       setWidth(w);
       setHeight(h);
     };
@@ -19,9 +26,16 @@ export const useWindowSize = () => {
   return { width, height };
 };
 
-const MOBILE_BREAKPOINT = 600;
+const useIsAtWindowBreakpoint = (breakpoint) => {
+  const { width } = useWindowSize();
+
+  return width <= breakpoint;
+};
 
 export const useIsMobileSize = () => {
-  const { width } = useWindowSize();
-  return width <= MOBILE_BREAKPOINT;
+  return useIsAtWindowBreakpoint(variables.mobileBreakpoint);
+};
+
+export const useIsTabletSize = () => {
+  return useIsAtWindowBreakpoint(variables.tabletBreakpoint);
 };

@@ -38,8 +38,11 @@ $gray900-dark: #fafafb;
 $gray1000-dark: #fff;
 
 // breakpoints
-$mobile-break: 600px;
-$tablet-break: 1024px;
+// maintain separately as plain number for export convenience
+$mobile-break-num: 600;
+$mobile-break: $mobile-break-num * 1px;
+$tablet-break-num: 1024;
+$tablet-break: $tablet-break-num * 1px;
 @mixin on-tablet {
   & {
     @media (max-width: $tablet-break) {

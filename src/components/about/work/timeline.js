@@ -2,17 +2,24 @@ import * as styles from "./timeline.module.scss";
 
 import React from "react";
 import mergeDefaults from "utils/merge-defaults";
+import { useIsTabletSize } from "hooks/window-size";
 
 const EVENT_HEIGHT = 80;
 
 const Timeline = ({ timeline, ...otherProps }) => {
+  const isTablet = !useIsTabletSize();
+
   return (
     <div {...mergeDefaults({ className: styles.container }, otherProps)}>
       {timeline?.map((job, index) => (
         <Event
           key={`${job.company}-${job.dates}`}
           {...job}
-          style={{ marginTop: (index * EVENT_HEIGHT) / 2 }}
+          style={
+            isTablet
+              ? { marginTop: (index * EVENT_HEIGHT) / 2 }
+              : { opacity: 0.4 + (0.6 * (index + 1)) / timeline.length }
+          }
         />
       ))}
     </div>
