@@ -34,7 +34,7 @@ collections:
                 allow_add: true
                 fields:
                   - { label: "Label", name: "label", widget: "string" }
-                  - { label: "Text", name: "text", widget: "string" }
+                  - { label: "Text", name: "text", widget: "text" }
 
           - label: "Work Examples"
             name: "workExamples"
@@ -172,3 +172,5 @@ collections:
         fields:
           - {label: "Data Key", name: "dataKey", widget: "hidden", default: "general-info"}
           - {label: "Email", name: "email", widget: "string"}
+          - {label: "Dribble", name: "dribble", widget: "string"}
+          - {label: "LinkedIn", name: "linkedin", widget: "string"}

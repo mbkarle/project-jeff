@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import mergeDefaults from "utils/merge-defaults";
 import Tabbable from "components/basics/tabbable";
 import { useIsMobileSize } from "hooks/window-size";
+import MD from "components/basics/md";
 
 const HERO_TYPES = {
   header: PropTypes.string,
@@ -47,7 +48,7 @@ const HeroSummaries = ({ summaries, ...otherProps }) => {
         </div>
         {summaries?.map(({ label, text }) => (
           <Tabbable.View key={`view-${label}`} eventKey={label} className={styles.summaryText}>
-            {text}
+            <MD>{text}</MD>
           </Tabbable.View>
         ))}
       </Tabbable>
