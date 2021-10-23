@@ -13,6 +13,9 @@ import Button from "components/basics/button";
 import { useIsMobileSize } from "hooks/window-size";
 import { RemoveScrollBar } from "react-remove-scroll-bar";
 import { useGeneralInfo } from "hooks/info";
+import GlobalOrLocalLink from "components/basics/global-or-local-link";
+import LinkedinIcon from "svg/linkedin-icon";
+import DribbbleIcon from "svg/dribbble-icon";
 
 const HeaderWithData = (props) => {
   const data = useStaticQuery(graphql`
@@ -44,7 +47,7 @@ const HeaderWithData = (props) => {
   );
 };
 
-const Header = ({ navData, siteTitle }) => {
+const Header = ({ navData, siteTitle, linkedin, dribbble }) => {
   const [isOpen, setOpen] = useState(false);
   const [inUse, setInUse] = useState(false);
   const isMobile = useIsMobileSize();
@@ -71,6 +74,14 @@ const Header = ({ navData, siteTitle }) => {
         {navData?.map((item) => (
           <AutoActiveNavItem {...item} key={`header-nav-${item.pathname}`} />
         ))}
+        <div className={styles.mobileLinks}>
+          <GlobalOrLocalLink href={dribbble}>
+            <DribbbleIcon />
+          </GlobalOrLocalLink>
+          <GlobalOrLocalLink href={linkedin}>
+            <LinkedinIcon />
+          </GlobalOrLocalLink>
+        </div>
       </div>
       <AvailableButton className={styles.availableButton} />
       {isMobile && isOpen && <RemoveScrollBar />}
@@ -86,6 +97,8 @@ Header.propTypes = {
     }),
   ),
   siteTitle: PropTypes.string,
+  linkedin: PropTypes.string,
+  dribbble: PropTypes.string,
 };
 
 const useIsPathMatch = (targetPath) => {

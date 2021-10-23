@@ -26,6 +26,10 @@
       justify-content: center;
       background: design-system.$bg;
 
+      .nav-item:first-child {
+        margin-top: auto;
+      }
+
       .nav-item {
         margin: 24px 0;
         font-size: 32px;
@@ -34,6 +38,10 @@
 
       opacity: 0;
       transform: translateY(-100%);
+
+      .mobile-links {
+        display: flex;
+      }
     }
 
     &.mobile-active {
@@ -112,4 +120,15 @@
 
 .available-button {
   z-index: design-system.$z-on-modal;
+}
+
+.mobile-links {
+  margin-top: auto;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    margin: 0 16px 52px;
+  }
 }
