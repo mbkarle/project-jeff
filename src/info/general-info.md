@@ -1,6 +1,6 @@
 ---
 dataKey: general-info
 email: wjeff415@gmail.com
-dribble: /
-linkedin: /
+dribble: https://dribbble.com/jeffwangdesign
+linkedin: https://www.linkedin.com/in/jeffwangdesign/
 ---
