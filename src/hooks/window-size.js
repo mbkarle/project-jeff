@@ -9,8 +9,8 @@ const min = (...values) => {
 const getWindowSize = (useMin) => {
   const choose = useMin ? min : Math.max;
   return {
-    width: choose(window.visualViewport?.width, window.innerWidth),
-    height: choose(window.visualViewport?.height, window.innerHeight),
+    width: choose(window?.visualViewport?.width, window?.innerWidth),
+    height: choose(window?.visualViewport?.height, window?.innerHeight),
   };
 };
 
