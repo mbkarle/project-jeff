@@ -14,9 +14,9 @@ linkGroups:
       - label: Twitter
         url: https://twitter.com
       - label: Medium
-        url: /
+        url: https://medium.com/@wjeff
       - label: LinkedIn
-        url: /
+        url: https://www.linkedin.com/in/jeffwangdesign/
       - label: Instagram
         url: /
   - category: Contact
