@@ -24,5 +24,5 @@ linkGroups:
       - label: wjeff415@gmail.com
         url: mailto:wjeff415@gmail.com
       - label: Resume
-        url: /
+        url: https://www.dropbox.com/sh/jw94biw7ym2lz2m/AADqks7OkeJw_ytxuoECQp66a?dl=0&preview=resume.pdf
 ---
