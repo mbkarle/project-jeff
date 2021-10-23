@@ -62,6 +62,7 @@
 .image-container {
   position: relative;
   max-width: #{"min(66%, 750px)"};
+  min-height: 500px;
   flex-shrink: 0;
   flex: 1.5;
 }

@@ -15,9 +15,11 @@
 
     padding: 56px var(--page-margin) 0;
 
-    > .event:not(:first-child) {
-      margin-right: 0;
-      margin-bottom: 8px;
+    > .event {
+      margin-right: 0 !important;
+      &:not(:first-child) {
+        margin-bottom: 8px;
+      }
     }
   }
 
