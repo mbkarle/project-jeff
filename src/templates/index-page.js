@@ -36,7 +36,7 @@ export const query = graphql`
           title
           img {
             childImageSharp {
-              gatsbyImageData
+              gatsbyImageData(placeholder: BLURRED)
             }
           }
         }
@@ -49,7 +49,7 @@ export const query = graphql`
             title
             image {
               childImageSharp {
-                gatsbyImageData
+                gatsbyImageData(placeholder: BLURRED)
               }
             }
           }

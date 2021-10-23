@@ -32,7 +32,7 @@ export const query = graphql`
           header
           image {
             childImageSharp {
-              gatsbyImageData
+              gatsbyImageData(placeholder: BLURRED)
             }
           }
         }
@@ -58,7 +58,7 @@ export const query = graphql`
             activities
             image {
               childImageSharp {
-                gatsbyImageData
+                gatsbyImageData(placeholder: BLURRED)
               }
             }
             description
