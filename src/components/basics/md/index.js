@@ -3,6 +3,7 @@ import * as styles from "./md.module.scss";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import mergeDefaults from "utils/merge-defaults";
+import GlobalOrLocalLink from "components/basics/global-or-local-link";
 
 const MD = (props) => (
   <ReactMarkdown
@@ -12,7 +13,7 @@ const MD = (props) => (
         return <div {...props} />;
       },
       a: (props) => {
-        return <a target="_blank" rel="noreferrer" className={styles.link} {...props} />;
+        return <GlobalOrLocalLink className={styles.link} {...props} />;
       },
     }}
     {...mergeDefaults({ className: styles.md }, props)}

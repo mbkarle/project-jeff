@@ -1,9 +1,10 @@
 import * as styles from "./footer.module.scss";
 
 import React from "react";
-import { Link, useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql } from "gatsby";
 import mergeDefaults from "utils/merge-defaults";
 import { getFrontmatter } from "utils/data";
+import GlobalOrLocalLink from "components/basics/global-or-local-link";
 
 const FooterWithData = (props) => {
   const footerData = useStaticQuery(graphql`
@@ -48,7 +49,7 @@ const LinkGroup = ({ category, links }) => {
       <div className={styles.linkCategory}>{category}</div>
       <div className={styles.linksContainer}>
         {links.map(({ label, url }) => (
-          <GlobalOrLocalLink key={`${label}-${url}`} className={styles.link} url={url}>
+          <GlobalOrLocalLink key={`${label}-${url}`} className={styles.link} href={url}>
             {label}
           </GlobalOrLocalLink>
         ))}
@@ -56,12 +57,5 @@ const LinkGroup = ({ category, links }) => {
     </div>
   );
 };
-
-const GlobalOrLocalLink = ({ url, ...otherProps }) =>
-  url?.charAt(0) === "/" ? (
-    <Link to={url} {...otherProps} />
-  ) : (
-    <a href={url} {...otherProps} target="_blank" rel="noreferrer" />
-  );
 
 export default FooterWithData;
