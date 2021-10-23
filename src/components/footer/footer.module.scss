@@ -13,12 +13,12 @@
 
   @include design-system.on-tablet {
     .title-container {
-      margin-right: 112px;
+      margin-right: #{"min(112px, 10vw)"};
     }
 
     .link-groups-container {
       > .link-group:not(:last-child) {
-        margin-right: 56px;
+        margin-right: #{"min(56px, 12vw)"};
       }
     }
   }
@@ -61,6 +61,7 @@
 .link-groups-container {
   display: flex;
   align-items: flex-start;
+  flex-wrap: wrap;
 
   > .link-group:not(:last-child) {
     margin-right: 80px;
