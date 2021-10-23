@@ -12,10 +12,7 @@ import { useSlideDown } from "hooks/animation";
 const extractKey = (category, index) => `${category}-${index}`;
 
 const CategoriesSlideshow = ({ id, categories, ...otherProps }) => {
-  const imageContainerId = `${id}-image-container`;
-
-  // force re-render when container is rendered to ensure portaling works
-  const updateImageContainer = useState(null)[1];
+  const [imageContainer, updateImageContainer] = useState(null);
   return (
     <Slideshow initialSlide={extractKey(categories?.[0]?.category, 0)}>
       <div {...mergeDefaults({ className: styles.container }, otherProps)}>
@@ -25,24 +22,24 @@ const CategoriesSlideshow = ({ id, categories, ...otherProps }) => {
               key={`${categoryDetails.category}-${idx}`}
               categoryDetails={categoryDetails}
               eventKey={extractKey(categoryDetails.category, idx)}
-              imageContainerId={imageContainerId}
+              imageContainer={imageContainer}
             />
           ))}
         </div>
-        <div id={imageContainerId} className={styles.imageContainer} ref={updateImageContainer} />
+        <div className={styles.imageContainer} ref={updateImageContainer} />
       </div>
     </Slideshow>
   );
 };
 
-const Category = ({ categoryDetails, eventKey, imageContainerId }) => {
+const Category = ({ categoryDetails, eventKey, imageContainer }) => {
   const isTablet = useIsTabletSize();
   const { category, image, ...rest } = categoryDetails;
 
   return (
     <>
       <CategoryTab key={category} category={category} {...rest} eventKey={eventKey} />
-      <OptionalPortal nodeId={!isTablet && imageContainerId}>
+      <OptionalPortal node={!isTablet && imageContainer}>
         <Slideshow.Slide key={`image-${category}`} eventKey={eventKey}>
           {({ isActive }) => (
             <AnimatedImage

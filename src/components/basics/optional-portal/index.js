@@ -5,15 +5,12 @@ import PropTypes from "prop-types";
 /**
  * Portal children to a node when given, otherwise render children as they are in react tree
  */
-const OptionalPortal = ({ nodeId, children }) =>
-  nodeId ? (
-    <Portal node={document && document.getElementById(nodeId)}>{children}</Portal>
-  ) : (
-    children
-  );
+const OptionalPortal = ({ node, children }) => {
+  return node ? <Portal node={node}>{children}</Portal> : children;
+};
 
 OptionalPortal.propTypes = {
-  nodeId: PropTypes.string,
+  node: PropTypes.object,
   children: PropTypes.node,
 };
 
