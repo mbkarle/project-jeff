@@ -6,11 +6,18 @@
   display: flex;
   flex-direction: column;
   
-  padding: 80px var(--page-margin) 112px;
+  padding: 80px #{"min(112px, 5vw)"} 104px;
   box-sizing: border-box;
 
   .title {
     margin-bottom: 80px;
+  }
+
+  @include design-system.on-tablet {
+    padding: 48px var(--page-margin) 16px;
+    .title {
+      margin-bottom: 52px;
+    }
   }
 }
 

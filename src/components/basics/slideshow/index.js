@@ -11,7 +11,8 @@ const Slide = ({ eventKey, children }) => {
   const { activeKey } = useContext(SlideshowContext);
   const isActive = activeKey === eventKey;
 
-  return isActive ? children : null;
+  // if children is function, return with isActive as param, otherwise only render if active
+  return typeof children === "function" ? children({ isActive }) : isActive ? children : null;
 };
 
 const Tab = ({ eventKey, children }) => {

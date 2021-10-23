@@ -1,8 +1,8 @@
 import * as styles from "./button.module.scss";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, forwardRef } from "react";
 import PropTypes from "prop-types";
-import mergeDefaults from "utils/merge-defaults";
+import mergeDefaults, { mergeClassName } from "utils/merge-defaults";
 import ButtonHoverContent from "./button-hover-content";
 
 const useAfterClick = (delay) => {
@@ -21,7 +21,7 @@ const useAfterClick = (delay) => {
   return [isClicked, onClick];
 };
 
-const Button = ({ children, clickContent, onClick, ...otherProps }) => {
+const Button = forwardRef(({ children, clickContent, onClick, ...otherProps }, ref) => {
   const [isClicked, setClicked] = useAfterClick(2000);
   return (
     <button
@@ -30,14 +30,15 @@ const Button = ({ children, clickContent, onClick, ...otherProps }) => {
         clickContent && setClicked();
         onClick && onClick();
       }}
+      ref={ref}
     >
       <div className={styles.mainContent}>{children}</div>
-      <div className={styles.clickContent} style={{ display: isClicked ? "flex" : "none" }}>
+      <div className={mergeClassName(styles.clickContent, isClicked && styles.clicked)}>
         {clickContent}
       </div>
     </button>
   );
-};
+});
 
 Button.propTypes = {
   children: PropTypes.node,

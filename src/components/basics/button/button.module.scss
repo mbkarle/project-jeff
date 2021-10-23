@@ -1,18 +1,26 @@
 @use 'src/css/design-system';
 
+@mixin overlay-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .button {
   cursor: pointer;
   overflow: hidden;
   position: relative;
   &:hover {
     .hover-content:not(:empty) {
-      display: flex;
+      @include overlay-visible;
     }
   }
 }
 
 .hover-content, .click-content {
-  display: none;
+  display: flex;
+  opacity: 0;
+  transition: all 0.2s ease-out;
+  transform: translateY(-100%);
   background: inherit;
   z-index: design-system.$z-mg;
   position: absolute;
@@ -24,4 +32,8 @@
 .main-content {
   z-index: design-system.$z-bg;
   background: inherit;
+}
+
+.click-content.clicked {
+  @include overlay-visible;
 }

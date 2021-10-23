@@ -77,9 +77,17 @@ Header.propTypes = {
   siteTitle: PropTypes.string,
 };
 
-const AutoActiveNavItem = (props) => {
+const useIsPathMatch = (targetPath) => {
   const { pathname } = useLocation();
-  return <HeaderNavItem isActive={props.pathname === pathname} {...props} />;
+
+  const process = (s) => s.toLowerCase().replaceAll("/", "");
+
+  return process(pathname) === process(targetPath);
+};
+
+const AutoActiveNavItem = (props) => {
+  const isActive = useIsPathMatch(props.pathname);
+  return <HeaderNavItem isActive={isActive} {...props} />;
 };
 
 const HeaderNavItem = ({ label, pathname, isActive, ...otherProps }) => (

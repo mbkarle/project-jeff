@@ -6,7 +6,47 @@
   box-sizing: border-box;
 
   .tabs-container {
-    margin-right: #{"min(64px, 5vw)"};
+    margin-right: #{"min(64px, 3.5vw)"};
+  }
+
+  @include design-system.on-tablet {
+    .image-container {
+      display: none;
+      flex: 0;
+    }
+    .tabs-container {
+      margin-right: 0;
+      max-width: 100%;
+
+      .tab-button:not(:last-child) {
+        margin-bottom: 16px;
+      }
+
+      .image {
+        position: relative;
+        margin-bottom: 32px;
+        display: flex;
+        justify-content: center;
+
+        &.hidden-image {
+          height: 0;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .tab-button {
+      padding: 16px;
+
+      &.active {
+        .tab {
+          padding-left: 16px;
+        }
+      }
+
+    }
   }
 }
 
@@ -21,8 +61,10 @@
 }
 
 .image-container {
-  max-width: 50%;
+  position: relative;
+  max-width: 66%;
   flex-shrink: 0;
+  flex: 1.5;
 }
 
 .tab-button {
@@ -38,11 +80,6 @@
     .tab {
       padding-left: 24px;
       border-left: 2px solid design-system.$blue600;
-    }
-
-    .description {
-      max-height: 500px;
-      transition-duration: 1s;
     }
   }
 
@@ -72,13 +109,26 @@
 .activities {
   @extend .p-3;
   color: design-system.$gray200;
+  text-align: left;
 }
 
 .description {
   @extend .p-1;
   color: design-system.$gray50;
   text-align: left;
-  max-height: 0;
-  transition: max-height 0.2s ease-out;
   overflow: hidden;
+  box-sizing: border-box;
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  width: inherit;
+  height: inherit;
+  transition: opacity 0.2s ease-in-out;
+  opacity: 1;
+
+  &.hidden-image {
+    opacity: 0;
+  }
 }
