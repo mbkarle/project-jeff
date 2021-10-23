@@ -7,6 +7,7 @@ const min = (...values) => {
 };
 
 const getWindowSize = (useMin) => {
+  if (typeof window === "undefined") return { width: 2000, height: 2000 };
   const choose = useMin ? min : Math.max;
   return {
     width: choose(window?.visualViewport?.width, window?.innerWidth),
