@@ -12,6 +12,7 @@ import XIcon from "svg/x-icon";
 import Button from "components/basics/button";
 import { useIsMobileSize } from "hooks/window-size";
 import { RemoveScrollBar } from "react-remove-scroll-bar";
+import { useGeneralInfo } from "hooks/info";
 
 const HeaderWithData = (props) => {
   const data = useStaticQuery(graphql`
@@ -30,7 +31,17 @@ const HeaderWithData = (props) => {
 
   const { navigation, siteTitle } = getFrontmatter(data) || {};
 
-  return <Header navData={navigation} siteTitle={siteTitle} {...props} />;
+  const { linkedin, dribbble } = useGeneralInfo();
+
+  return (
+    <Header
+      navData={navigation}
+      siteTitle={siteTitle}
+      linkedin={linkedin}
+      dribbble={dribbble}
+      {...props}
+    />
+  );
 };
 
 const Header = ({ navData, siteTitle }) => {

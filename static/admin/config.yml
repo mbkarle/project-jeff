@@ -172,5 +172,5 @@ collections:
         fields:
           - {label: "Data Key", name: "dataKey", widget: "hidden", default: "general-info"}
           - {label: "Email", name: "email", widget: "string"}
-          - {label: "Dribble", name: "dribble", widget: "string"}
+          - {label: "Dribbble", name: "dribbble", widget: "string"}
           - {label: "LinkedIn", name: "linkedin", widget: "string"}

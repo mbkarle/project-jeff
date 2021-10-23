@@ -12,6 +12,8 @@ export const InfoProvider = (props) => {
         markdownRemark(frontmatter: { dataKey: { eq: "general-info" } }) {
           frontmatter {
             email
+            linkedin
+            dribbble
           }
         }
       }
@@ -23,5 +25,7 @@ export const InfoProvider = (props) => {
 
   return <InfoContext.Provider value={getFrontmatter(data) ?? {}} {...props} />;
 };
+
+export const useGeneralInfo = () => useContext(InfoContext) || {};
 
 export const useEmail = () => useContext(InfoContext)?.email;
