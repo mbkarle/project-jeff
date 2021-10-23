@@ -93,10 +93,10 @@
     color: design-system.$gray400;
   }
 
-  margin: 0 var(--page-margin) 140px;
+  margin: 0 var(--page-margin) 124px;
 
   @include design-system.on-tablet {
-    margin-bottom: 82px;
+    margin-bottom: 72px;
   }
 
   @include design-system.on-mobile {
