@@ -11,6 +11,9 @@ const MD = (props) => (
         // default to use divs instead of p
         return <div {...props} />;
       },
+      a: (props) => {
+        return <a target="_blank" rel="noreferrer" className={styles.link} {...props} />;
+      },
     }}
     {...mergeDefaults({ className: styles.md }, props)}
   />
