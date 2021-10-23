@@ -1,6 +1,7 @@
 import * as styles from "./categories-slideshow.module.scss";
 
 import React, { useState, useRef } from "react";
+import PropTypes from "prop-types";
 import Slideshow from "components/basics/slideshow";
 import Image from "components/basics/image";
 import mergeDefaults, { mergeClassName } from "utils/merge-defaults";
@@ -11,7 +12,7 @@ import { useSlideDown } from "hooks/animation";
 
 const extractKey = (category, index) => `${category}-${index}`;
 
-const CategoriesSlideshow = ({ id, categories, ...otherProps }) => {
+const CategoriesSlideshow = ({ categories, ...otherProps }) => {
   const [imageContainer, updateImageContainer] = useState(null);
   return (
     <Slideshow initialSlide={extractKey(categories?.[0]?.category, 0)}>
@@ -30,6 +31,10 @@ const CategoriesSlideshow = ({ id, categories, ...otherProps }) => {
       </div>
     </Slideshow>
   );
+};
+
+CategoriesSlideshow.propTypes = {
+  categories: PropTypes.arrayOf(PropTypes.object),
 };
 
 const Category = ({ categoryDetails, eventKey, imageContainer }) => {
@@ -55,6 +60,15 @@ const Category = ({ categoryDetails, eventKey, imageContainer }) => {
   );
 };
 
+Category.propTypes = {
+  categoryDetails: PropTypes.shape({
+    category: PropTypes.string,
+    image: PropTypes.object,
+  }),
+  eventKey: PropTypes.string,
+  imageContainer: PropTypes.object,
+};
+
 const ACTIVITY_DELIMITER = " · ";
 
 const CategoryTab = ({ eventKey, ...otherProps }) => {
@@ -72,6 +86,10 @@ const CategoryTab = ({ eventKey, ...otherProps }) => {
       )}
     </Slideshow.Tab>
   );
+};
+
+CategoryTab.propTypes = {
+  eventKey: PropTypes.string,
 };
 
 const ANIMATION_DURATION_SEC = 0.5;
@@ -94,6 +112,13 @@ const AnimatedButton = ({ isActive, category, activities, description, ...otherP
   );
 };
 
+AnimatedButton.propTypes = {
+  isActive: PropTypes.bool,
+  category: PropTypes.string,
+  activities: PropTypes.arrayOf(PropTypes.string),
+  description: PropTypes.string,
+};
+
 const AnimatedImage = ({ isActive, isTablet, ...imageProps }) => {
   const imageRef = useRef();
 
@@ -104,6 +129,11 @@ const AnimatedImage = ({ isActive, isTablet, ...imageProps }) => {
       <Image {...imageProps} />
     </div>
   );
+};
+
+AnimatedImage.propTypes = {
+  isActive: PropTypes.bool,
+  isTablet: PropTypes.bool,
 };
 
 export default CategoriesSlideshow;

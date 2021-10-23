@@ -1,10 +1,16 @@
 import React, { createContext, useContext, useState } from "react";
+import PropTypes from "prop-types";
 
 const SlideshowContext = createContext({});
 
 const Slideshow = ({ initialSlide, ...otherProps }) => {
   const [activeKey, setActiveKey] = useState(initialSlide);
   return <SlideshowContext.Provider value={{ activeKey, setActiveKey }} {...otherProps} />;
+};
+
+Slideshow.propTypes = {
+  // event key for initial slide
+  initialSlide: PropTypes.string,
 };
 
 const Slide = ({ eventKey, children }) => {

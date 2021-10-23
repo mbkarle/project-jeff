@@ -1,6 +1,7 @@
 import * as styles from "./footer.module.scss";
 
 import React from "react";
+import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
 import mergeDefaults from "utils/merge-defaults";
 import { getFrontmatter } from "utils/data";
@@ -43,6 +44,12 @@ const Footer = ({ title, subtitle, linkGroups, ...otherProps }) => {
   );
 };
 
+Footer.propTypes = {
+  title: PropTypes.string,
+  subtitle: PropTypes.string,
+  linkGroups: PropTypes.arrayOf(PropTypes.object),
+};
+
 const LinkGroup = ({ category, links }) => {
   return (
     <div className={styles.linkGroup}>
@@ -56,6 +63,16 @@ const LinkGroup = ({ category, links }) => {
       </div>
     </div>
   );
+};
+
+LinkGroup.propTypes = {
+  category: PropTypes.string,
+  links: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string,
+      url: PropTypes.string,
+    }),
+  ),
 };
 
 export default FooterWithData;

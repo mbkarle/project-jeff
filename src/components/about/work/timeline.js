@@ -1,6 +1,7 @@
 import * as styles from "./timeline.module.scss";
 
 import React from "react";
+import PropTypes from "prop-types";
 import mergeDefaults from "utils/merge-defaults";
 import { useIsTabletSize } from "hooks/window-size";
 
@@ -26,6 +27,16 @@ const Timeline = ({ timeline, ...otherProps }) => {
   );
 };
 
+Timeline.propTypes = {
+  timeline: PropTypes.arrayOf(
+    PropTypes.shape({
+      company: PropTypes.string,
+      role: PropTypes.string,
+      dates: PropTypes.string,
+    }),
+  ),
+};
+
 const maxLen = (str1, str2) => (str1?.length > str2?.length ? str1?.length : str2?.length) || 0;
 
 const Event = ({ company, role, dates, ...otherProps }) => {
@@ -40,6 +51,12 @@ const Event = ({ company, role, dates, ...otherProps }) => {
       <div className={styles.dates}>{dates}</div>
     </div>
   );
+};
+
+Event.propTypes = {
+  company: PropTypes.string,
+  role: PropTypes.string,
+  dates: PropTypes.string,
 };
 
 export default Timeline;
