@@ -13,7 +13,7 @@ intro:
 
     This drive (no pun intended) to seek new experiences is the same way I approach design. As a designer & creative, I strive to create familiar, delightful and profound experiences by leveraging user centered research, technology & beautiful design.
   alt: Picture of Jeff with border collie in van
-  image: /img/intro.png
+  image: /img/van.png
 work:
   title: Moments of Work
   description: >-
