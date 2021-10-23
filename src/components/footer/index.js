@@ -58,6 +58,10 @@ const LinkGroup = ({ category, links }) => {
 };
 
 const GlobalOrLocalLink = ({ url, ...otherProps }) =>
-  url?.charAt(0) === "/" ? <Link to={url} {...otherProps} /> : <a href={url} {...otherProps} />;
+  url?.charAt(0) === "/" ? (
+    <Link to={url} {...otherProps} />
+  ) : (
+    <a href={url} {...otherProps} target="_blank" rel="noreferrer" />
+  );
 
 export default FooterWithData;
