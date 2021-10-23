@@ -80,6 +80,10 @@
     .tab {
       padding-left: 24px;
       border-left: 2px solid design-system.$blue600;
+
+      .activities {
+        margin-bottom: 8px;
+      }
     }
   }
 
@@ -94,10 +98,6 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0;
-
-  .activities {
-    margin-bottom: 8px;
-  }
 }
 
 .category {
