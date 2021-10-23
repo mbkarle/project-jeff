@@ -22,7 +22,7 @@ work:
     these approaches to problems of all different shapes and sizes.
 
 
-    If you’re curious, here’s my [resume](/).
+    If you’re curious, here’s my [resume](https://www.dropbox.com/sh/jw94biw7ym2lz2m/AADqks7OkeJw_ytxuoECQp66a?dl=0&preview=resume.pdf).
   recognition:
     title: Recognitions
     recognitions:
