@@ -1,4 +1,4 @@
 ---
 dataKey: general-info
-email: "jeff@monthly.com"
+email: wjeff415@gmail.com
 ---
