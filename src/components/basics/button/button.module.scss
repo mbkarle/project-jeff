@@ -24,7 +24,7 @@
   background: inherit;
   z-index: design-system.$z-mg;
   position: absolute;
-  inset: 0;
+  @include design-system.inset-0;
   align-items: center;
   justify-content: center;
 }

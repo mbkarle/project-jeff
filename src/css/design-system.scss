@@ -121,6 +121,13 @@ $tablet-break: $tablet-break-num * 1px;
   text-align: inherit;
 }
 
+@mixin inset-0 {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
 $z-bg: 1;
 $z-mg: 2;
 $z-fg: 3;

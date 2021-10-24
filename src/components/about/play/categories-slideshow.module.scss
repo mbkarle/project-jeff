@@ -121,7 +121,7 @@
 
 .image {
   position: absolute;
-  inset: 0;
+  @include design-system.inset-0;
   width: inherit;
   height: inherit;
   transition: opacity 0.35s ease-in-out;
