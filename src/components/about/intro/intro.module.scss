@@ -34,6 +34,7 @@
 
     .image-container {
       max-width: 100%;
+      border-radius: 0;
     }
 
     .description {
@@ -53,6 +54,10 @@
 .image-container {
   z-index: design-system.$z-bg;
   max-width: 50%;
+  // safari specific bug fix
+  transform: translateZ(0);
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 .header {
