@@ -12,13 +12,13 @@ linkGroups:
   - category: Social
     links:
       - label: Twitter
-        url: https://twitter.com
+        url: https://twitter.com/jeffwangdesign
       - label: Medium
         url: https://medium.com/@wjeff
       - label: LinkedIn
         url: https://www.linkedin.com/in/jeffwangdesign/
       - label: Instagram
-        url: /
+        url: https://www.instagram.com/wjeff415/
   - category: Contact
     links:
       - label: wjeff415@gmail.com
