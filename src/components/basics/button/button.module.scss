@@ -20,7 +20,7 @@
   display: flex;
   opacity: 0;
   transition: all 0.2s ease-out;
-  transform: translateY(-100%);
+  transform: translateY(-100%) translateZ(0);
   background: inherit;
   z-index: design-system.$z-mg;
   position: absolute;
