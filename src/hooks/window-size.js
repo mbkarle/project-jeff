@@ -44,9 +44,9 @@ const useIsAtWindowBreakpoint = (breakpoint) => {
 };
 
 export const useIsMobileSize = () => {
-  return useIsAtWindowBreakpoint(variables.mobileBreakpoint);
+  return useIsAtWindowBreakpoint(variables.mobileBreakpoint || 600);
 };
 
 export const useIsTabletSize = () => {
-  return useIsAtWindowBreakpoint(variables.tabletBreakpoint);
+  return useIsAtWindowBreakpoint(variables.tabletBreakpoint || 1024);
 };
