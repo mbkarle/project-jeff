@@ -34,9 +34,13 @@ export const useWindowSize = (useMin) => {
 };
 
 const useIsAtWindowBreakpoint = (breakpoint) => {
+  // keep breakpoint in state to force re-render if it updates
+  // since breakpoints may come from exported css, will not re-render otherwise
+  const [bp, updateBP] = useState(breakpoint);
+  useEffect(() => updateBP(breakpoint), [breakpoint]);
   const { width } = useWindowSize();
 
-  return width <= breakpoint;
+  return width <= bp;
 };
 
 export const useIsMobileSize = () => {
