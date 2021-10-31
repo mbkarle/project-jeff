@@ -4,26 +4,27 @@ import React from "react";
 import PropTypes from "prop-types";
 import mergeDefaults from "utils/merge-defaults";
 import { useIsTabletSize } from "hooks/window-size";
+import ClientOnly from "components/basics/client-only";
 
 const EVENT_HEIGHT = 80;
 
 const Timeline = ({ timeline, ...otherProps }) => {
-  const isTablet = !useIsTabletSize();
+  const isTablet = useIsTabletSize();
 
   return (
-    <div {...mergeDefaults({ className: styles.container }, otherProps)}>
+    <ClientOnly {...mergeDefaults({ className: styles.container }, otherProps)}>
       {timeline?.map((job, index) => (
         <Event
           key={`${job.company}-${job.dates}`}
           {...job}
           style={
-            isTablet
+            !isTablet
               ? { marginTop: (index * EVENT_HEIGHT) / 2 }
               : { opacity: 0.4 + (0.6 * (index + 1)) / timeline.length }
           }
         />
       ))}
-    </div>
+    </ClientOnly>
   );
 };
 

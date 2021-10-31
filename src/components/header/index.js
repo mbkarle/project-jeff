@@ -104,7 +104,7 @@ Header.propTypes = {
 const useIsPathMatch = (targetPath) => {
   const { pathname } = useLocation();
 
-  const process = (s) => s.toLowerCase().replaceAll("/", "");
+  const process = (s) => s.toLowerCase()?.replaceAll?.("/", "");
 
   return process(pathname) === process(targetPath);
 };
