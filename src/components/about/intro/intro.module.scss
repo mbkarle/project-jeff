@@ -27,7 +27,11 @@
 
     .header {
       text-align: center;
-      left: unset;
+      // since safari left: unset is broken
+      left: 0;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0 20px;
       top: $padding-top;
       transform: translateY(-50%);
     }
